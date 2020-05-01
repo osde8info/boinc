@@ -1,0 +1,24 @@
+<account>
+    <master_url>https://universeathome.pl/universe/</master_url>
+    <authenticator>21c55e6be76f527af232761fa5999591</authenticator>
+    <project_name>Universe@Home</project_name>
+    <project_preferences>
+    </project_preferences>
+    <gui_urls>
+        <gui_url>
+            <name>Message boards</name>
+            <description>Correspond with other users on the Universe@Home message boards</description>
+            <url>https://universeathome.pl/universe/forum_index.php</url>
+        </gui_url>
+        <gui_url>
+            <name>Your account</name>
+            <description>View your account information</description>
+            <url>https://universeathome.pl/universe/home.php</url>
+        </gui_url>
+        <gui_url>
+            <name>Your tasks</name>
+            <description>View the last week or so of computational work</description>
+            <url>https://universeathome.pl/universe/results.php?userid=212024</url>
+        </gui_url>
+    </gui_urls>
+</account>

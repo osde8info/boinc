@@ -1,6 +1,11 @@
 #!/bin/bash
+
 mkdir -p /usr/app/boinc/locale
 mkdir -p /usr/app/boinc/slots
+
+LHC_XML='accounts/account_lhcathome.cern.ch_lhcathome.xml'
+UNI_XML='accounts/account_universeathome.pl_universe.xml'
+YOY_XML='accounts/account_www.rechenkraft.net_yoyo.xml'
 
 prefs_file_path='global_prefs_override.xml'
 cfg_ram_max_busy_xml_key='ram_max_used_busy_pct'
@@ -9,19 +14,23 @@ threshold_ram_settings_pct=95
 
 . start-utils.sh
 
+# remove all accounts & projects
+
+rm boinc/account_*
+
+if [[ $LHC_KEY ]]; then
+  account_project_enable authenticator $LHC_KEY $LHC_XML
+fi
+
+if [[ $UNI_KEY ]]; then
+  account_project_enable authenticator $UNI_KEY $UNI_XML
+fi
+
+if [[ $YOY_KEY ]]; then
+  account_project_enable authenticator $YOY_KEY $YOY_XML
+fi
+
 cd /usr/app/boinc
-
-if [ "$BALENA_DEVICE_TYPE" = "jetson-nano" ]; then
-  echo 'Jetson Nano detected - enabling fan at 100%'
-  echo 255 > /sys/devices/pwm-fan/target_pwm
-fi
-
-if [[ -z $ACCOUNT_KEY ]]; then
-  echo 'Account key undefined - using balena key'
-else
-  echo 'Account key set'
-  sed -i -e 's|<authenticator>[0-9a-z_]\{1,\}</authenticator>|<authenticator>'"$ACCOUNT_KEY"'</authenticator>|g' account_boinc.bakerlab.org_rosetta.xml
-fi
 
 if [[ -z $SKIP_BOINC_MEM_SETTINGS_CHECK ]]; then
   validate_ram_settings

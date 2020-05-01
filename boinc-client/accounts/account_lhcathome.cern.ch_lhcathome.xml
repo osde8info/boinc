@@ -1,0 +1,29 @@
+<account>
+    <master_url>https://lhcathome.cern.ch/lhcathome/</master_url>
+    <authenticator>8a4494851517ab088a03f4a9ed589817</authenticator>
+    <project_name>LHC@home</project_name>
+    <project_preferences>
+    </project_preferences>
+    <gui_urls>
+        <gui_url>
+            <name>Message boards</name>
+            <description>Correspond with other users on the LHC@home message boards</description>
+            <url>https://lhcathome.cern.ch/lhcathome/forum_index.php</url>
+        </gui_url>
+        <gui_url>
+            <name>Your account</name>
+            <description>View your account information</description>
+            <url>https://lhcathome.cern.ch/lhcathome/home.php</url>
+        </gui_url>
+        <gui_url>
+            <name>Your tasks</name>
+            <description>View the last week or so of computational work</description>
+            <url>https://lhcathome.cern.ch/lhcathome/results.php?userid=611183</url>
+        </gui_url>
+        <gui_url>
+            <name>FAQ</name>
+            <description>Frequently Asked Questions on LHC@home</description>
+            <url>http://lhcathome.web.cern.ch/faq</url>
+        </gui_url>
+    </gui_urls>
+</account>

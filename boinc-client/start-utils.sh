@@ -4,6 +4,11 @@ get_int_xml_val() {
   echo $xml_int_val
 }
 
+account_project_enable() {
+  sed -i -e "s|<$1>[0-9a-z_]\{1,\}</$1>|<$1>$2</$1>|g" "$3"
+  cp "$3" ./boinc
+}
+
 update_float_xml_val_with_int() {
   sed -i -e "s|<$1>[0-9a-z.]\{1,\}</$1>|<$1>$2.000000</$1>|g" "$3"
 }

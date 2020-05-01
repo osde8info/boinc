@@ -1,0 +1,35 @@
+<account>
+    <master_url>http://www.rechenkraft.net/yoyo/</master_url>
+    <authenticator>9f52ee1c68ef8f9fccb9ada9d19efcb0</authenticator>
+    <project_name>yoyo@home</project_name>
+    <project_preferences>
+    </project_preferences>
+    <gui_urls>
+        <gui_url>
+            <name>My account</name>
+            <description>View your account information and credit totals</description>
+            <url>http://www.rechenkraft.net/yoyo/home.php</url>
+        </gui_url>
+
+        <gui_url>
+            <name>Forum</name>
+            <description>Get help about yoyo@home</description>
+            <url>http://www.rechenkraft.net/forum/viewforum.php?f=66</url>
+        </gui_url>
+        <gui_url>
+            <name>Chat</name>
+            <description>Chat with other user about distributed computing</description>
+            <url>http://www.rechenkraft.net/wiki/index.php?title=Rechenkraft:Chat/en</url>
+        </gui_url>
+        <gui_url>
+            <name>Rechenkraft.net</name>
+            <description>Mehr Projekte</description>
+            <url>http://www.rechenkraft.net</url>
+        </gui_url>
+        <gui_url>
+            <name>- Donation -</name>
+            <description>Make a donation for the running costs</description>
+            <url>http://www.rechenkraft.net/yoyo/donations.php</url>
+        </gui_url>
+    </gui_urls>
+</account>
