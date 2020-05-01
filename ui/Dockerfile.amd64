@@ -1,0 +1,15 @@
+FROM balenalib/%%BALENA_ARCH%%
+
+WORKDIR /usr/app
+
+RUN install_packages \
+    boinctui \
+    kbd
+RUN curl -LO https://github.com/yudai/gotty/releases/download/v1.0.1/gotty_linux_amd64.tar.gz
+RUN tar xfzv gotty_linux_amd64.tar.gz
+
+COPY boinctui.cfg /root/.boinctui.cfg
+COPY start.sh ./
+RUN chmod u+x start.sh
+
+CMD ["/usr/app/start.sh"]

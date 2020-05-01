@@ -1,0 +1,26 @@
+version: '2'
+volumes:
+  boinc:
+services:
+  boinc-client:
+    build: ./boinc-client
+    restart: always
+    ports:
+      - 31416:31416
+    volumes:
+      - 'boinc:/usr/app/boinc'
+    labels:
+      io.balena.features.sysfs: '1'
+  ui:
+    build: ./ui
+    restart: always
+    privileged: true
+    ports:
+      - 80:80
+  power-management:
+    build: ./power-management
+    restart: on-failure
+    environment:
+      - 'DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket'
+    labels:
+      io.balena.features.dbus: '1'
