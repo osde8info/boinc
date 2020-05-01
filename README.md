@@ -1,5 +1,5 @@
 ## Hardware compatibility
-This project should run on 64-bit OS devices with 1 or more GB of RAM, but we've tested on the below:
+This project should run on Pi Zero/One/Two devices with 1GB of RAM:
 * Raspberry Pi Zero/One/Two (1GB RAM)
 
 ## Getting started
