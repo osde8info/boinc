@@ -1,6 +1,9 @@
-## Hardware compatibility
+## BOINC runner
 This project should run on Pi Zero/One/Two devices with 1GB of RAM:
 * Raspberry Pi Zero/One/Two (1GB RAM)
+
+This project runs three random ARM projects from:
+* https://boinc.berkeley.edu/projects.php
 
 ## Getting started
 
