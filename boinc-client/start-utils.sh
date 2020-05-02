@@ -1,3 +1,7 @@
+cfg_ram_max_busy_xml_key='ram_max_used_busy_pct'
+cfg_ram_max_idle_xml_key='ram_max_used_idle_pct'
+threshold_ram_settings_pct=95
+
 get_int_xml_val() {
   local xml_val=$(xml_grep --text_only "$1" "$2")
   local xml_int_val=$(awk "BEGIN {print int($xml_val)}")
@@ -5,8 +9,8 @@ get_int_xml_val() {
 }
 
 account_project_enable() {
-  sed -i -e "s|<$1>[0-9a-z_]\{1,\}</$1>|<$1>$2</$1>|g" "$3"
-  cp "$3" ./boinc
+  sed -i -e "s|<$1>[0-9a-z_]\{1,\}</$1>|<$1>$2</$1>|g" "accounts/$3"
+  cp "accounts/$3" ./boinc
 }
 
 update_float_xml_val_with_int() {
