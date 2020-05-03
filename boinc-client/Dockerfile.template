@@ -10,4 +10,6 @@ COPY accounts/* ./accounts/
 
 COPY configs/* ./configs/
 
-CMD ["/bin/bash","/usr/app/start.sh"]
+RUN chmod u+x start.sh
+
+CMD ["/usr/app/start.sh"]
