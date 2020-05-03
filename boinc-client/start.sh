@@ -31,17 +31,19 @@ if [[ $YOY_KEY ]]; then
   account_project_enable authenticator $YOY_KEY $YOY_XML
 fi
 
+cp configs/* boinc
+
 cd /usr/app/boinc
 
 if [[ -z $SKIP_BOINC_MEM_SETTINGS_CHECK ]]; then
-  validate_ram_settings
+  validate_ram_settings "$global_prefs"
 fi
 
 totalmem=$(awk '/^MemTotal:/{print $2}' /proc/meminfo)
 
 if [[ -z $SKIP_BOINC_CPU_SETTINGS_CHECK && "$totalmem" -lt "2500000" ]]; then
   echo "Less than 2.5GB RAM - running single concurrent task"
-  update_float_xml_val_with_int max_ncpus_pct 25 "$global_prefs"
+  # update_float_xml_val_with_int max_ncpus_pct 25 "$global_prefs"
 fi
 
 exec boinc --dir /usr/app/boinc/ --allow_remote_gui_rpc

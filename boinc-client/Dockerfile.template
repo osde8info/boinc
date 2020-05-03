@@ -8,6 +8,6 @@ COPY start*.sh ./
 
 COPY accounts/* ./accounts/
 
-COPY config/* ./boinc/
+COPY configs/* ./configs/
 
 CMD ["/bin/bash","/usr/app/start.sh"]

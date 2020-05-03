@@ -18,18 +18,18 @@ update_float_xml_val_with_int() {
 }
 
 validate_ram_settings() {
-  local cfg_ram_max_busy=$(get_int_xml_val "$cfg_ram_max_busy_xml_key" "$prefs_file_path")
-  local cfg_ram_max_idle=$(get_int_xml_val "$cfg_ram_max_busy_xml_key" "$prefs_file_path")
+  local cfg_ram_max_busy=$(get_int_xml_val "$cfg_ram_max_busy_xml_key" "$1")
+  local cfg_ram_max_idle=$(get_int_xml_val "$cfg_ram_max_busy_xml_key" "$1")
 
   echo "Validating boinc RAM settings"
 
   if [[ ! -z $cfg_ram_max_busy && $cfg_ram_max_busy -gt $threshold_ram_settings_pct ]]; then
     echo "  max RAM when busy (${cfg_ram_max_busy}%) too high - setting to ${threshold_ram_settings_pct}%"
-    update_float_xml_val_with_int "$cfg_ram_max_busy_xml_key" "$threshold_ram_settings_pct" "$prefs_file_path"
+    update_float_xml_val_with_int "$cfg_ram_max_busy_xml_key" "$threshold_ram_settings_pct" "$1"
   fi
 
   if [[ ! -z $cfg_ram_max_idle && $cfg_ram_max_idle -gt $threshold_ram_settings_pct ]]; then
     echo "  max RAM when idle (${cfg_ram_max_idle}%) too high - setting to ${threshold_ram_settings_pct}%"
-    update_float_xml_val_with_int "$cfg_ram_max_idle_xml_key" "$threshold_ram_settings_pct" "$prefs_file_path"
+    update_float_xml_val_with_int "$cfg_ram_max_idle_xml_key" "$threshold_ram_settings_pct" "$1"
   fi
 }
